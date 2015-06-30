@@ -1,5 +1,17 @@
-<ion-view view-title="Group">
-  <ion-content class="padding">
-  asdasdasd
-      </ion-content> 
-    </ion-view>
+<button ng-click="play()">Play</button>
+<button ng-click="prev()">Prev</button>
+<button ng-click="next()">Next</button>
+
+<button ng-click="volumeUp()">Volume-Up</button>
+<button ng-click="volumeDown()">Volume-Down</button>
+<button ng-click="addSong()">addSong</button>
+<input type="range" id="myRange" ng-model="volumeLevel">
+<p>{{playbackTimeCurrent}}</p>
+
+<ul id="playlist-list" class="tracklist"  ng-model="playlistSongs">
+    <li ng-repeat="item in playlistSongs">
+        <div class="song">{{ item.song }}</div>
+        <div class="artist">{{ item.artist }}</div>
+        <div class="album">{{ item.album }}</div>
+    </li>
+</ul>
