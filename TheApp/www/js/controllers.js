@@ -1,7 +1,9 @@
 angular.module('GroupScreen.controllers', ['firebase', 'spotify', 'angularSoundManager', 'btford.socket-io'])
 
 .factory('Socket', function (socketFactory) {
-  return socketFactory();
+    return socketFactory({
+        ioSocket: io('http://localhost:3000')
+    });
 })
 
 .controller('joinGroupCtrl', function($state, $scope, $location, $firebaseObject, $firebaseArray) {
@@ -36,7 +38,7 @@ angular.module('GroupScreen.controllers', ['firebase', 'spotify', 'angularSoundM
 
 .controller('groupCtrl', function ($firebaseArray, $stateParams, $timeout, $scope, $location, Socket) {
     $scope.messages = [];
-    $scope.groupId = $stateParams.groupId;
+    $scope.groupId = $stateParams.groupName;
     var musicUrl = new Firebase('https://shining-fire-8634.firebaseio.com/'+$scope.groupId+'/music');
     $scope.musicHolder = $firebaseArray(musicUrl);
     $scope.musicHolder.$loaded().then(function () {
