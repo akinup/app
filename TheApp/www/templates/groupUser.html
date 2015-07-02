@@ -1,35 +1,26 @@
-<div class="container">
 
-	
-	<div class="row">
-  <div class="col-sm-12">
-  	 <input type="text" ng-model="musicValueSpotify" name="musicValueSpotify" placeholder="Musiktitel" ng-keyup="querySpotify()">
-           <p class="result">Für die Suche ergaben sich folgende Ergebnise: </p>
-           <ul>
-            <li ng-repeat="item in SpotifyEntries">
+
+      <label class="item item-input item-floating-label">
+    <span class="input-label">Musictitle</span>
+    <input type="text" ng-model="musicValueSpotify" name="musicValueSpotify" placeholder="Search..." ng-keyup="querySpotify()">
+  </label>
+  	
+           <h3 class="result lead">Für die Suche ergaben sich folgende Ergebnise: </h3>
+           <ul class="soundcloudlist">
+            <li class="item item-avatar item-icon-right" ng-repeat="item in SpotifyEntries" ng-click="addSongSpotify(item)">
+    <i class="icon ion-ios-plus-outline"></i>
                 <a class="media-left">
                     <img ng-src="{{item.artwork_url}}" height="100" width="100">
                 </a>
                 {{item.title}}
-                <button ng-click="addSongSpotify(item)">+</button>
+
             </li>
         </ul>
-</div>
-</div>
-<hr>
 
-        <div class="row">
-            <div class="col-sm-12">
-                <div class="song_library"><h3>Tracks:</h3></div>
-            </div>
-        </div>
-<div class="row">
+                <div><h3 class="song_library lead">Tracks:</h3></div>
 
 <ul id="playlist-list" class="tracklist"  ng-model="playlistSongs">
-    <li ng-repeat="item in playlistSongs">
-        <div class="song col-sm-12">{{ item.song }}</div>
+    <li class="item" ng-repeat="item in playlistSongs">
+        <div class="song">{{ item.song }}</div>
     </li>
 </ul>
-</div>
-
-</div>

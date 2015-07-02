@@ -76,3 +76,38 @@
   -moz-background-clip: padding-box;
   background-clip: padding-box;
 }
+
+.button.button-dark{
+  padding-top: 25px;
+  padding-left: 50px;
+}
+
+.soundcloudlist{
+  list-style-type: none;
+}
+
+.slider,.progress {
+  width: 1024px;
+  height: 8px;
+  background: #236D6D;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.progress {
+  background: #33A18B;
+  width: 5px;
+  position: relative;
+  border-radius: 0px;
+  -webkit-transition: width 2s; /* Safari */
+    transition: width 2s;
+}
+
+.progress::after {
+  content: "";
+  width: 20px;
+  height: 8px;
+  background: #4BD2B9;
+  position: absolute;
+  right: -10px;
+}
