@@ -1,1 +1,78 @@
 /* Empty. Add your own CSS if you like */
+.volume-control {
+  position: relative;
+  padding: 0 20px;
+  color: #ffffff;
+  font-size: 0;
+  white-space: nowrap; }
+.volume-control .volume__up, .volume-control .volume__down, .volume-control .volume__level {
+  display: inline-block;
+  color: #eeeeee;
+  vertical-align: middle;
+  cursor: pointer; }
+.volume-control .volume__up:active, .volume-control .volume__down:active, .volume-control .volume__level:active {
+  color: #0066B5; }
+.volume-control .volume__up, .volume-control .volume__down {
+  font-size: 16px;
+  text-align: center; }
+.volume-control .volume__level {
+  width: 120px;
+  height: 10px;
+  margin: 0 12px;
+  padding: 1px;
+  background-color: #45a2e2;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  border-radius: 5px;
+  -webkit-background-clip: padding-box;
+  -moz-background-clip: padding-box;
+  background-clip: padding-box;
+}
+.volume-control .volume__level span {
+  display: inline-block;
+  height: 8px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -ms-border-radius: 4px;
+  -o-border-radius: 4px;
+  border-radius: 4px;
+  -webkit-background-clip: padding-box;
+  -moz-background-clip: padding-box;
+  background-clip: padding-box;
+  background-image: -webkit-linear-gradient(top,  #eeeeee 0%, #bebebe 100%);
+  background-image: -moz-linear-gradient(top,  #eeeeee 0%, #bebebe 100%);
+  background-image: -ms-linear-gradient(top,  #eeeeee 0%, #bebebe 100%);
+  background-image: -o-linear-gradient(top,  #eeeeee 0%, #bebebe 100%);
+  background-image: linear-gradient(top,  #eeeeee 0%, #bebebe 100%); }
+
+
+.playback-progress {
+  height: 20px;
+  background-color: #6c7b94;
+  cursor: pointer;
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  -ms-border-radius: 6px;
+  -o-border-radius: 6px;
+  border-radius: 6px;
+  -webkit-background-clip: padding-box;
+  -moz-background-clip: padding-box;
+  background-clip: padding-box;
+}
+.playback-progress span {
+  display: inline-block;
+  margin-top: 1px;
+  vertical-align: top;
+  height: 18px;
+  background: blue;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  border-radius: 5px;
+  -webkit-background-clip: padding-box;
+  -moz-background-clip: padding-box;
+  background-clip: padding-box;
+}

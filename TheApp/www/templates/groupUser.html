@@ -1,0 +1,35 @@
+<div class="container">
+
+	
+	<div class="row">
+  <div class="col-sm-12">
+  	 <input type="text" ng-model="musicValueSpotify" name="musicValueSpotify" placeholder="Musiktitel" ng-keyup="querySpotify()">
+           <p class="result">Für die Suche ergaben sich folgende Ergebnise: </p>
+           <ul>
+            <li ng-repeat="item in SpotifyEntries">
+                <a class="media-left">
+                    <img ng-src="{{item.artwork_url}}" height="100" width="100">
+                </a>
+                {{item.title}}
+                <button ng-click="addSongSpotify(item)">+</button>
+            </li>
+        </ul>
+</div>
+</div>
+<hr>
+
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="song_library"><h3>Tracks:</h3></div>
+            </div>
+        </div>
+<div class="row">
+
+<ul id="playlist-list" class="tracklist"  ng-model="playlistSongs">
+    <li ng-repeat="item in playlistSongs">
+        <div class="song col-sm-12">{{ item.song }}</div>
+    </li>
+</ul>
+</div>
+
+</div>

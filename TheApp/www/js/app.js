@@ -41,6 +41,16 @@ $stateProvider.state('group', {
   }
 })
 
+$stateProvider.state('groupUser', {
+  url: '/groupUser/:groupName',
+  views: {
+    home: {
+      templateUrl: 'templates/groupUser.html',
+      controller: 'GroupUserCtrl'
+    }
+  }
+})
+
 
   // if none of the above states are matched, use this as the fallback
   $urlRouterProvider.otherwise('joinGroup')
