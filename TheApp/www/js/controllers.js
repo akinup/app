@@ -2,7 +2,7 @@ angular.module('GroupScreen.controllers', ['firebase', 'spotify', 'angularSoundM
 
 .factory('Socket', function (socketFactory) {
     return socketFactory({
-        ioSocket: io('http://localhost:3000')
+        ioSocket: io('localhost:3000')
     });
 })
 
@@ -66,7 +66,7 @@ angular.module('GroupScreen.controllers', ['firebase', 'spotify', 'angularSoundM
                     "file": sm_object.url,
                     "song": item.title,
                     "artist": item.artist || 'Unknown Artist',
-                    "album": item.album || 'Unknown Artist',
+                    "duration": item.duration || 'Unknown Artist',
                     "user": "User"
                 };
                 $scope.musicHolder.$add(libraryItem);
@@ -159,6 +159,8 @@ angular.module('GroupScreen.controllers', ['firebase', 'spotify', 'angularSoundM
 
 .controller('joinGroupCtrl', function($state, $scope, $location, $firebaseObject, $firebaseArray) {
 
+    console.log("asd");
+
   $scope.submit = function(data) {
     var group = new Firebase('https://shining-fire-8634.firebaseio.com/' + data.name);
     $scope.group = $firebaseArray(group);
@@ -189,6 +191,7 @@ angular.module('GroupScreen.controllers', ['firebase', 'spotify', 'angularSoundM
 
 
 .controller('groupCtrl', function ($http, $firebaseArray, $stateParams, $timeout, $scope, $location, Socket) {
+    console.log("as");
      $scope.messages = [];
     $scope.playbackTimeCurrent = 15;
     $scope.playbackProgress = 44;
@@ -292,8 +295,8 @@ angular.module('GroupScreen.controllers', ['firebase', 'spotify', 'angularSoundM
                 .success(function (data) {
                     $scope.SpotifyEntries = data;
                 });
-
-        }
+}
+        
     }
 
     $scope.addSongSpotify = function (item) {
@@ -303,7 +306,7 @@ angular.module('GroupScreen.controllers', ['firebase', 'spotify', 'angularSoundM
                     "file": sm_object.url,
                     "song": item.title,
                     "artist": item.artist || 'Unknown Artist',
-                    "album": item.album || 'Unknown Artist',
+                    "duration": item.duration || 'Unknown Artist',
                     "user": "User"
                 };
                 $scope.musicHolder.$add(libraryItem);

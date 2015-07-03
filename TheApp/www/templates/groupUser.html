@@ -1,17 +1,15 @@
-
+<ion-view view-title="User">
+<div class="rand">
 
       <label class="item item-input item-floating-label">
     <span class="input-label">Musictitle</span>
-    <input type="text" ng-model="musicValueSpotify" name="musicValueSpotify" placeholder="Search..." ng-keyup="querySpotify()">
+    <input type="text" ng-model="musicValueSpotify" placeholder="Search..." ng-keyup="querySpotify()">
   </label>
   	
            <h3 class="result lead">Für die Suche ergaben sich folgende Ergebnise: </h3>
            <ul class="soundcloudlist">
             <li class="item item-avatar item-icon-right" ng-repeat="item in SpotifyEntries" ng-click="addSongSpotify(item)">
     <i class="icon ion-ios-plus-outline"></i>
-                <a class="media-left">
-                    <img ng-src="{{item.artwork_url}}" height="100" width="100">
-                </a>
                 {{item.title}}
 
             </li>
@@ -24,3 +22,5 @@
         <div class="song">{{ item.song }}</div>
     </li>
 </ul>
+</div>
+</ion-view>

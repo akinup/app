@@ -1,25 +1,23 @@
-
-
+<ion-view view-title="Remote" class="pane">
+  <div class="rand">
 <div class="mediaplayer">
-<button class="button button-icon icon ion-ios-skipbackward"></button>
-<button class="button button-icon icon ion-ios-play"></button>
-<button class="button button-icon icon ion-ios-skipforward"></button>
+<button ng-click="prev()" class="button button-icon icon ion-ios-skipbackward"></button>
+<button ng-click="play()" class="button button-icon icon ion-ios-play"></button>
+<button ng-click="next()" class="button button-icon icon ion-ios-skipforward"></button>
 </div>
 
 
   <label class="item item-input item-floating-label">
     <span class="input-label">Musictitel</span>
-    <input type="text" ng-model="musicValueSpotify" name="musicValueSpotify" placeholder="Search..." ng-keyup="querySpotify()">
+    <input type="text" ng-model="musicValueSpotify" placeholder="Search..." ng-keyup="querySpotify()">
   </label>
   	 
            <p class="result lead">Für die Suche ergaben sich folgende Ergebnise: </p>
            <ul>
-            <li ng-repeat="item in SpotifyEntries">
-                <a class="media-left">
-                    <img ng-src="{{item.artwork_url}}" height="100" width="100">
-                </a>
+            <li ng-repeat="item in SpotifyEntries" class="item item-icon-right" ng-click="addSongSpotify(item)">
+    <i class="icon ion-ios-plus-outline"></i>
+
                 {{item.title}}
-                <button ng-click="addSongSpotify(item)">+</button>
             </li>
         </ul>
 
@@ -37,3 +35,5 @@
         <div class="song">{{ item.song }}</div>
     </li>
 </ul>
+</test>
+</ion-view>
